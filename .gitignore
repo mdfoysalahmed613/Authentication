@@ -1,0 +1,24 @@
+# Node modules (safety if client/server gitignore missed them)
+node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+*.env
+
+# Build outputs
+dist
+build
+
+# VS Code settings
+.vscode/
+client/.vscode/
+server/.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
