@@ -34,19 +34,7 @@ const register = async (req, res) => {
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
-    const mailOptions = {
-      from: process.env.SENDER_EMAIL,
-      to: email,
-      subject: "welcome to Authentication",
-      text: `welcome to Authentication Website. Your account has been created with emial id: ${email}`,
-    };
-    // try {
-    //   await transporter.sendMail(mailOptions);
-    //   console.log("email send Successfully");
-    // } catch (mailError) {
-    //   console.error("Email sending failed:", mailError.message);
-    //   // Don't return here — user is already registered
-    // }
+    
     const userData = {
       name: user.name,
       email: user.email,
@@ -60,7 +48,6 @@ const register = async (req, res) => {
         message: "User Created Successfully",
       });
   } catch (error) {
-    console.log("Register Error: ", error);
     return res
       .status(500)
       .json({ success: false, message: "Internal Server Error" });

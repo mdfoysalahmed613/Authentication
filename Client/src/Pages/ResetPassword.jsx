@@ -52,7 +52,7 @@ export default function ResetPassword() {
     e.preventDefault()
     const otpArray = inputRefs.current.map(e=> e.value);
     setOtp(otpArray.join(''))
-    console.log(otp)
+    
     try {
       const {data} = await axios.post(`${backendUrl}/api/auth/verify-reset-otp`,{email,otp},{withCredentials: true})
       if(data.success){
